@@ -38,11 +38,11 @@ jobs:
         run: git add .
       - name: commit changed files
         run: git commit -m "🌍 Update JSON- Web Scrap Blogs from Medium - $(date -d '+5 hours +30 minutes' +'%d %b %Y | %I:%M %p')"
-      - name: fetch from master
-        run: git fetch origin master
+      - name: fetch from test
+        run: git fetch origin test
       # authentication details
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@test
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: test
