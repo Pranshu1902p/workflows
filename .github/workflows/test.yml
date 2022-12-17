@@ -1,8 +1,8 @@
 name: test
 run-name: Scrapping Pranshu's Medium blog
-on:
-  schedule:
-    - cron: "14 18 * * *" # run 7:30 AM IST everyday
+on: [push]
+#  schedule:
+#    - cron: "14 18 * * *" # run 7:30 AM IST everyday
 permissions:
   contents: write
 jobs:
@@ -12,6 +12,7 @@ jobs:
       # git checkout
       - uses: actions/checkout@v2
         with:
+          ref: test
           repository: "Pranshu1902p/workflows"
       # setup python
       - name: setup python
