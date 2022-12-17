@@ -2,7 +2,7 @@ name: test
 run-name: Scrapping Pranshu's Medium blog
 on:
   schedule:
-    - cron: "24 18 * * *" # run 7:30 AM IST everyday
+    - cron: "46 18 * * *" # run 7:30 AM IST everyday
 permissions:
   contents: write
 jobs:
@@ -12,7 +12,7 @@ jobs:
       # git checkout
       - uses: actions/checkout@v2
         with:
-          ref: test
+          #ref: test
           repository: "Pranshu1902p/workflows"
       # setup python
       - name: setup python
@@ -33,6 +33,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+      - name: checkout another branch
+        run: git checkout test
       - name: check for changes
         run: git status
       - name: stage changed files
