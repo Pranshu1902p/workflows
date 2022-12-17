@@ -1,8 +1,8 @@
 name: test
 run-name: Scrapping Pranshu's Medium blog
-on: [push]
-#  schedule:
-#    - cron: "3 * * * *" # run script after everyday
+on:
+  schedule:
+    - cron: "2 * * * *" # run script after everyday
 permissions:
   contents: write
 jobs:
@@ -28,7 +28,7 @@ jobs:
       # running the script
       - name: execute py script
         run: |
-          python ./.github/workflows/mediumBlogsFetch.py
+          python ./.github/workflows/medium.py
       # pushing the update code
       - name: switching from HTTPS to SSH
         run: |
