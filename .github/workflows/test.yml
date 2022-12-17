@@ -1,8 +1,8 @@
 name: test
 run-name: Scrapping Pranshu's Medium blog
-on: [push]
-#  schedule:
-#    - cron: "14 18 * * *" # run 7:30 AM IST everyday
+on:
+  schedule:
+    - cron: "24 18 * * *" # run 7:30 AM IST everyday
 permissions:
   contents: write
 jobs:
